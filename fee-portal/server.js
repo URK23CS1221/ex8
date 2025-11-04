@@ -24,7 +24,7 @@ app.use('/api/payments', require('./src/routes/payments'));
 app.get('/', (req,res) => res.send('Fee portal API running'));
 
 
-//module.exports = app;
+module.exports = app;
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`server ${PORT}`));
+// const PORT = process.env.PORT || 4000;
+// app.listen(PORT, () => console.log(`server ${PORT}`));
