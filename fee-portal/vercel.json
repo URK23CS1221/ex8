@@ -10,7 +10,7 @@
  "routes": [
   {
    "src": "/(.*)",
-   "dest": "fee-portal/server.js"
+   "dest": "server.js"
   }
  ]
 }
