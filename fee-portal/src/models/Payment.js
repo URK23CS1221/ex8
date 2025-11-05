@@ -1,0 +1,14 @@
+const mongoose = require('mongoose');
+
+const PaymentSchema = new mongoose.Schema({
+  student: { type: mongoose.Schema.Types.ObjectId, ref: 'Student', required: true },
+  amount: { type: Number, required: true },
+  method: { type: String, enum: ['cash','card','online','cheque'], default: 'cash' },
+  reference: { type: String }, // txn id or cheque no
+  receivedBy: { type: String }, // admin user
+  createdAt: { type: Date, default: Date.now }
+});
+
+PaymentSchema.index({ createdAt: -1 });
+
+module.exports = mongoose.model('Payment', PaymentSchema);
